@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48A0056F-51AD-4D77-9B97-2728391AABC6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GD3</RootNamespace>
+    <AssemblyName>GD3</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="fileupload, Version=1013.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Fit File Repair Tool\fileupload.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fit\AccumulatedField.cs" />
+    <Compile Include="Fit\Accumulator.cs" />
+    <Compile Include="Fit\BufferedMesgBroadcaster.cs" />
+    <Compile Include="Fit\Crc.cs" />
+    <Compile Include="Fit\Decode.cs" />
+    <Compile Include="Fit\DecodeMode.cs" />
+    <Compile Include="Fit\Defines.cs" />
+    <Compile Include="Fit\DeveloperDataKey.cs" />
+    <Compile Include="Fit\DeveloperDataLookup.cs" />
+    <Compile Include="Fit\DeveloperField.cs" />
+    <Compile Include="Fit\DeveloperFieldDefinition.cs" />
+    <Compile Include="Fit\DeveloperFieldDescription.cs" />
+    <Compile Include="Fit\Encode.cs" />
+    <Compile Include="Fit\Field.cs" />
+    <Compile Include="Fit\FieldBase.cs" />
+    <Compile Include="Fit\FieldComponent.cs" />
+    <Compile Include="Fit\FieldDefinition.cs" />
+    <Compile Include="Fit\FitException.cs" />
+    <Compile Include="Fit\Header.cs" />
+    <Compile Include="Fit\IMesgBroadcastPlugin.cs" />
+    <Compile Include="Fit\Mesg.cs" />
+    <Compile Include="Fit\MesgBroadcaster.cs" />
+    <Compile Include="Fit\MesgDefinition.cs" />
+    <Compile Include="Fit\Profile.cs" />
+    <Compile Include="Fit\ProtocolValidator.cs" />
+    <Compile Include="Fit\Subfield.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\Mesgs\AccelerometerDataMesg.cs" />
+    <Compile Include="Profile\Mesgs\ActivityMesg.cs" />
+    <Compile Include="Profile\Mesgs\AntChannelIdMesg.cs" />
+    <Compile Include="Profile\Mesgs\AntRxMesg.cs" />
+    <Compile Include="Profile\Mesgs\AntTxMesg.cs" />
+    <Compile Include="Profile\Mesgs\AviationAttitudeMesg.cs" />
+    <Compile Include="Profile\Mesgs\BarometerDataMesg.cs" />
+    <Compile Include="Profile\Mesgs\BikeProfileMesg.cs" />
+    <Compile Include="Profile\Mesgs\BloodPressureMesg.cs" />
+    <Compile Include="Profile\Mesgs\CadenceZoneMesg.cs" />
+    <Compile Include="Profile\Mesgs\CameraEventMesg.cs" />
+    <Compile Include="Profile\Mesgs\CapabilitiesMesg.cs" />
+    <Compile Include="Profile\Mesgs\ConnectivityMesg.cs" />
+    <Compile Include="Profile\Mesgs\CourseMesg.cs" />
+    <Compile Include="Profile\Mesgs\CoursePointMesg.cs" />
+    <Compile Include="Profile\Mesgs\DeveloperDataIdMesg.cs" />
+    <Compile Include="Profile\Mesgs\DeviceInfoMesg.cs" />
+    <Compile Include="Profile\Mesgs\DeviceSettingsMesg.cs" />
+    <Compile Include="Profile\Mesgs\DiveAlarmMesg.cs" />
+    <Compile Include="Profile\Mesgs\DiveGasMesg.cs" />
+    <Compile Include="Profile\Mesgs\DiveSettingsMesg.cs" />
+    <Compile Include="Profile\Mesgs\DiveSummaryMesg.cs" />
+    <Compile Include="Profile\Mesgs\EventMesg.cs" />
+    <Compile Include="Profile\Mesgs\ExdDataConceptConfigurationMesg.cs" />
+    <Compile Include="Profile\Mesgs\ExdDataFieldConfigurationMesg.cs" />
+    <Compile Include="Profile\Mesgs\ExdScreenConfigurationMesg.cs" />
+    <Compile Include="Profile\Mesgs\ExerciseTitleMesg.cs" />
+    <Compile Include="Profile\Mesgs\FieldCapabilitiesMesg.cs" />
+    <Compile Include="Profile\Mesgs\FieldDescriptionMesg.cs" />
+    <Compile Include="Profile\Mesgs\FileCapabilitiesMesg.cs" />
+    <Compile Include="Profile\Mesgs\FileCreatorMesg.cs" />
+    <Compile Include="Profile\Mesgs\FileIdMesg.cs" />
+    <Compile Include="Profile\Mesgs\GoalMesg.cs" />
+    <Compile Include="Profile\Mesgs\GpsMetadataMesg.cs" />
+    <Compile Include="Profile\Mesgs\GyroscopeDataMesg.cs" />
+    <Compile Include="Profile\Mesgs\HrMesg.cs" />
+    <Compile Include="Profile\Mesgs\HrmProfileMesg.cs" />
+    <Compile Include="Profile\Mesgs\HrvMesg.cs" />
+    <Compile Include="Profile\Mesgs\HrZoneMesg.cs" />
+    <Compile Include="Profile\Mesgs\LapMesg.cs" />
+    <Compile Include="Profile\Mesgs\LengthMesg.cs" />
+    <Compile Include="Profile\Mesgs\MagnetometerDataMesg.cs" />
+    <Compile Include="Profile\Mesgs\MemoGlobMesg.cs" />
+    <Compile Include="Profile\Mesgs\MesgCapabilitiesMesg.cs" />
+    <Compile Include="Profile\Mesgs\MetZoneMesg.cs" />
+    <Compile Include="Profile\Mesgs\MonitoringInfoMesg.cs" />
+    <Compile Include="Profile\Mesgs\MonitoringMesg.cs" />
+    <Compile Include="Profile\Mesgs\NmeaSentenceMesg.cs" />
+    <Compile Include="Profile\Mesgs\ObdiiDataMesg.cs" />
+    <Compile Include="Profile\Mesgs\OhrSettingsMesg.cs" />
+    <Compile Include="Profile\Mesgs\OneDSensorCalibrationMesg.cs" />
+    <Compile Include="Profile\Mesgs\PadMesg.cs" />
+    <Compile Include="Profile\Mesgs\PowerZoneMesg.cs" />
+    <Compile Include="Profile\Mesgs\RecordMesg.cs" />
+    <Compile Include="Profile\Mesgs\ScheduleMesg.cs" />
+    <Compile Include="Profile\Mesgs\SdmProfileMesg.cs" />
+    <Compile Include="Profile\Mesgs\SegmentFileMesg.cs" />
+    <Compile Include="Profile\Mesgs\SegmentIdMesg.cs" />
+    <Compile Include="Profile\Mesgs\SegmentLapMesg.cs" />
+    <Compile Include="Profile\Mesgs\SegmentLeaderboardEntryMesg.cs" />
+    <Compile Include="Profile\Mesgs\SegmentPointMesg.cs" />
+    <Compile Include="Profile\Mesgs\SessionMesg.cs" />
+    <Compile Include="Profile\Mesgs\SlaveDeviceMesg.cs" />
+    <Compile Include="Profile\Mesgs\SoftwareMesg.cs" />
+    <Compile Include="Profile\Mesgs\SpeedZoneMesg.cs" />
+    <Compile Include="Profile\Mesgs\SportMesg.cs" />
+    <Compile Include="Profile\Mesgs\StressLevelMesg.cs" />
+    <Compile Include="Profile\Mesgs\ThreeDSensorCalibrationMesg.cs" />
+    <Compile Include="Profile\Mesgs\TimestampCorrelationMesg.cs" />
+    <Compile Include="Profile\Mesgs\TotalsMesg.cs" />
+    <Compile Include="Profile\Mesgs\TrainingFileMesg.cs" />
+    <Compile Include="Profile\Mesgs\UserProfileMesg.cs" />
+    <Compile Include="Profile\Mesgs\VideoClipMesg.cs" />
+    <Compile Include="Profile\Mesgs\VideoDescriptionMesg.cs" />
+    <Compile Include="Profile\Mesgs\VideoFrameMesg.cs" />
+    <Compile Include="Profile\Mesgs\VideoMesg.cs" />
+    <Compile Include="Profile\Mesgs\VideoTitleMesg.cs" />
+    <Compile Include="Profile\Mesgs\WatchfaceSettingsMesg.cs" />
+    <Compile Include="Profile\Mesgs\WeatherAlertMesg.cs" />
+    <Compile Include="Profile\Mesgs\WeatherConditionsMesg.cs" />
+    <Compile Include="Profile\Mesgs\WeightScaleMesg.cs" />
+    <Compile Include="Profile\Mesgs\WorkoutMesg.cs" />
+    <Compile Include="Profile\Mesgs\WorkoutSessionMesg.cs" />
+    <Compile Include="Profile\Mesgs\WorkoutStepMesg.cs" />
+    <Compile Include="Profile\Mesgs\ZonesTargetMesg.cs" />
+    <Compile Include="Profile\Types\Activity.cs" />
+    <Compile Include="Profile\Types\ActivityClass.cs" />
+    <Compile Include="Profile\Types\ActivityLevel.cs" />
+    <Compile Include="Profile\Types\ActivitySubtype.cs" />
+    <Compile Include="Profile\Types\ActivityType.cs" />
+    <Compile Include="Profile\Types\AnalogWatchfaceLayout.cs" />
+    <Compile Include="Profile\Types\AntNetwork.cs" />
+    <Compile Include="Profile\Types\AntplusDeviceType.cs" />
+    <Compile Include="Profile\Types\AttitudeStage.cs" />
+    <Compile Include="Profile\Types\AttitudeValidity.cs" />
+    <Compile Include="Profile\Types\AutoActivityDetect.cs" />
+    <Compile Include="Profile\Types\AutolapTrigger.cs" />
+    <Compile Include="Profile\Types\Autoscroll.cs" />
+    <Compile Include="Profile\Types\AutoSyncFrequency.cs" />
+    <Compile Include="Profile\Types\BacklightMode.cs" />
+    <Compile Include="Profile\Types\BacklightTimeout.cs" />
+    <Compile Include="Profile\Types\BatteryStatus.cs" />
+    <Compile Include="Profile\Types\BenchPressExerciseName.cs" />
+    <Compile Include="Profile\Types\BikeLightBeamAngleMode.cs" />
+    <Compile Include="Profile\Types\BikeLightNetworkConfigType.cs" />
+    <Compile Include="Profile\Types\BodyLocation.cs" />
+    <Compile Include="Profile\Types\Bool.cs" />
+    <Compile Include="Profile\Types\BpStatus.cs" />
+    <Compile Include="Profile\Types\CalfRaiseExerciseName.cs" />
+    <Compile Include="Profile\Types\CameraEventType.cs" />
+    <Compile Include="Profile\Types\CameraOrientationType.cs" />
+    <Compile Include="Profile\Types\CardioExerciseName.cs" />
+    <Compile Include="Profile\Types\CarryExerciseName.cs" />
+    <Compile Include="Profile\Types\Checksum.cs" />
+    <Compile Include="Profile\Types\ChopExerciseName.cs" />
+    <Compile Include="Profile\Types\CommTimeoutType.cs" />
+    <Compile Include="Profile\Types\ConnectivityCapabilities.cs" />
+    <Compile Include="Profile\Types\CoreExerciseName.cs" />
+    <Compile Include="Profile\Types\CourseCapabilities.cs" />
+    <Compile Include="Profile\Types\CoursePoint.cs" />
+    <Compile Include="Profile\Types\CrunchExerciseName.cs" />
+    <Compile Include="Profile\Types\CurlExerciseName.cs" />
+    <Compile Include="Profile\Types\DateMode.cs" />
+    <Compile Include="Profile\Types\DateTime.cs" />
+    <Compile Include="Profile\Types\DayOfWeek.cs" />
+    <Compile Include="Profile\Types\DeadliftExerciseName.cs" />
+    <Compile Include="Profile\Types\DeviceIndex.cs" />
+    <Compile Include="Profile\Types\DigitalWatchfaceLayout.cs" />
+    <Compile Include="Profile\Types\DisplayHeart.cs" />
+    <Compile Include="Profile\Types\DisplayMeasure.cs" />
+    <Compile Include="Profile\Types\DisplayOrientation.cs" />
+    <Compile Include="Profile\Types\DisplayPosition.cs" />
+    <Compile Include="Profile\Types\DisplayPower.cs" />
+    <Compile Include="Profile\Types\DiveAlarmType.cs" />
+    <Compile Include="Profile\Types\DiveBacklightMode.cs" />
+    <Compile Include="Profile\Types\DiveGasStatus.cs" />
+    <Compile Include="Profile\Types\Event.cs" />
+    <Compile Include="Profile\Types\EventType.cs" />
+    <Compile Include="Profile\Types\ExdDataUnits.cs" />
+    <Compile Include="Profile\Types\ExdDescriptors.cs" />
+    <Compile Include="Profile\Types\ExdDisplayType.cs" />
+    <Compile Include="Profile\Types\ExdLayout.cs" />
+    <Compile Include="Profile\Types\ExdQualifiers.cs" />
+    <Compile Include="Profile\Types\ExerciseCategory.cs" />
+    <Compile Include="Profile\Types\File.cs" />
+    <Compile Include="Profile\Types\FileFlags.cs" />
+    <Compile Include="Profile\Types\FitBaseType.cs" />
+    <Compile Include="Profile\Types\FitBaseUnit.cs" />
+    <Compile Include="Profile\Types\FitnessEquipmentState.cs" />
+    <Compile Include="Profile\Types\FlyeExerciseName.cs" />
+    <Compile Include="Profile\Types\GarminProduct.cs" />
+    <Compile Include="Profile\Types\Gender.cs" />
+    <Compile Include="Profile\Types\Goal.cs" />
+    <Compile Include="Profile\Types\GoalRecurrence.cs" />
+    <Compile Include="Profile\Types\GoalSource.cs" />
+    <Compile Include="Profile\Types\HipRaiseExerciseName.cs" />
+    <Compile Include="Profile\Types\HipStabilityExerciseName.cs" />
+    <Compile Include="Profile\Types\HipSwingExerciseName.cs" />
+    <Compile Include="Profile\Types\HrType.cs" />
+    <Compile Include="Profile\Types\HrZoneCalc.cs" />
+    <Compile Include="Profile\Types\HyperextensionExerciseName.cs" />
+    <Compile Include="Profile\Types\Intensity.cs" />
+    <Compile Include="Profile\Types\Language.cs" />
+    <Compile Include="Profile\Types\LanguageBits0.cs" />
+    <Compile Include="Profile\Types\LanguageBits1.cs" />
+    <Compile Include="Profile\Types\LanguageBits2.cs" />
+    <Compile Include="Profile\Types\LanguageBits3.cs" />
+    <Compile Include="Profile\Types\LanguageBits4.cs" />
+    <Compile Include="Profile\Types\LapTrigger.cs" />
+    <Compile Include="Profile\Types\LateralRaiseExerciseName.cs" />
+    <Compile Include="Profile\Types\LeftRightBalance.cs" />
+    <Compile Include="Profile\Types\LeftRightBalance100.cs" />
+    <Compile Include="Profile\Types\LegCurlExerciseName.cs" />
+    <Compile Include="Profile\Types\LegRaiseExerciseName.cs" />
+    <Compile Include="Profile\Types\LengthType.cs" />
+    <Compile Include="Profile\Types\LocalDateTime.cs" />
+    <Compile Include="Profile\Types\LocalDeviceType.cs" />
+    <Compile Include="Profile\Types\LocaltimeIntoDay.cs" />
+    <Compile Include="Profile\Types\LungeExerciseName.cs" />
+    <Compile Include="Profile\Types\Manufacturer.cs" />
+    <Compile Include="Profile\Types\MesgCount.cs" />
+    <Compile Include="Profile\Types\MesgNum.cs" />
+    <Compile Include="Profile\Types\MessageIndex.cs" />
+    <Compile Include="Profile\Types\OlympicLiftExerciseName.cs" />
+    <Compile Include="Profile\Types\PlankExerciseName.cs" />
+    <Compile Include="Profile\Types\PlyoExerciseName.cs" />
+    <Compile Include="Profile\Types\PowerPhaseType.cs" />
+    <Compile Include="Profile\Types\PullUpExerciseName.cs" />
+    <Compile Include="Profile\Types\PushUpExerciseName.cs" />
+    <Compile Include="Profile\Types\PwrZoneCalc.cs" />
+    <Compile Include="Profile\Types\RiderPositionType.cs" />
+    <Compile Include="Profile\Types\RowExerciseName.cs" />
+    <Compile Include="Profile\Types\RunExerciseName.cs" />
+    <Compile Include="Profile\Types\Schedule.cs" />
+    <Compile Include="Profile\Types\SegmentDeleteStatus.cs" />
+    <Compile Include="Profile\Types\SegmentLapStatus.cs" />
+    <Compile Include="Profile\Types\SegmentLeaderboardType.cs" />
+    <Compile Include="Profile\Types\SegmentSelectionType.cs" />
+    <Compile Include="Profile\Types\SensorType.cs" />
+    <Compile Include="Profile\Types\SessionTrigger.cs" />
+    <Compile Include="Profile\Types\ShoulderPressExerciseName.cs" />
+    <Compile Include="Profile\Types\ShoulderStabilityExerciseName.cs" />
+    <Compile Include="Profile\Types\ShrugExerciseName.cs" />
+    <Compile Include="Profile\Types\Side.cs" />
+    <Compile Include="Profile\Types\SitUpExerciseName.cs" />
+    <Compile Include="Profile\Types\SourceType.cs" />
+    <Compile Include="Profile\Types\Sport.cs" />
+    <Compile Include="Profile\Types\SportBits0.cs" />
+    <Compile Include="Profile\Types\SportBits1.cs" />
+    <Compile Include="Profile\Types\SportBits2.cs" />
+    <Compile Include="Profile\Types\SportBits3.cs" />
+    <Compile Include="Profile\Types\SportBits4.cs" />
+    <Compile Include="Profile\Types\SportBits5.cs" />
+    <Compile Include="Profile\Types\SportBits6.cs" />
+    <Compile Include="Profile\Types\SportEvent.cs" />
+    <Compile Include="Profile\Types\SquatExerciseName.cs" />
+    <Compile Include="Profile\Types\StrokeType.cs" />
+    <Compile Include="Profile\Types\SubSport.cs" />
+    <Compile Include="Profile\Types\SupportedExdScreenLayouts.cs" />
+    <Compile Include="Profile\Types\SwimStroke.cs" />
+    <Compile Include="Profile\Types\Switch.cs" />
+    <Compile Include="Profile\Types\TimeIntoDay.cs" />
+    <Compile Include="Profile\Types\TimeMode.cs" />
+    <Compile Include="Profile\Types\TimerTrigger.cs" />
+    <Compile Include="Profile\Types\TimeZone.cs" />
+    <Compile Include="Profile\Types\TissueModelType.cs" />
+    <Compile Include="Profile\Types\Tone.cs" />
+    <Compile Include="Profile\Types\TotalBodyExerciseName.cs" />
+    <Compile Include="Profile\Types\TricepsExtensionExerciseName.cs" />
+    <Compile Include="Profile\Types\TurnType.cs" />
+    <Compile Include="Profile\Types\UserLocalId.cs" />
+    <Compile Include="Profile\Types\WarmUpExerciseName.cs" />
+    <Compile Include="Profile\Types\WatchfaceMode.cs" />
+    <Compile Include="Profile\Types\WaterType.cs" />
+    <Compile Include="Profile\Types\WeatherReport.cs" />
+    <Compile Include="Profile\Types\WeatherSevereType.cs" />
+    <Compile Include="Profile\Types\WeatherSeverity.cs" />
+    <Compile Include="Profile\Types\WeatherStatus.cs" />
+    <Compile Include="Profile\Types\Weight.cs" />
+    <Compile Include="Profile\Types\WktStepDuration.cs" />
+    <Compile Include="Profile\Types\WktStepTarget.cs" />
+    <Compile Include="Profile\Types\WorkoutCapabilities.cs" />
+    <Compile Include="Profile\Types\WorkoutEquipment.cs" />
+    <Compile Include="Profile\Types\WorkoutHr.cs" />
+    <Compile Include="Profile\Types\WorkoutPower.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\EndianBinaryReader.cs" />
+    <Compile Include="Utility\EndianBinaryWriter.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
